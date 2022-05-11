@@ -1,0 +1,36 @@
+@mixin button-size($padding-y, $padding-x, $font-size, $border-raduis) {
+	padding: $padding-y $padding-x;
+	font-size: $font-size;
+	border-radius: $border-raduis;
+}
+
+@mixin button-style(
+	$background,
+	$border,
+	$color,
+	$hover-background: lighten($background, 7.5%), // sass 内置函数 
+	$hover-border: lighten($border, 10%),
+	$hover-color: lighten($color, 10%)
+) {
+	color: $color;
+	background: $background;
+	border-color: $border;
+	&:hover {
+		color: $hover-color;
+		background: $hover-background;
+		border-color: $hover-border;
+	}
+	&:focus,
+	&:focus-visible {
+		color: $hover-color;
+		background: $hover-background;
+		border-color: $hover-border;
+	}
+	// 针对按钮的 disabled 的处理
+	&:disabled,
+	&.disabled {
+		color: $color;
+		background: $background;
+		border-color: $border;
+	}
+}
