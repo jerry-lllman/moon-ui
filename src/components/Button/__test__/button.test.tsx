@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import { ReactNode } from 'react'
 
-import Button, { ButtonProps, ButtonSize, ButtonType } from './button'
+import Button, { ButtonProps, ButtonSize, ButtonType } from '../button'
 
 // 小试牛刀一下
 // test('our first react test case', () => {

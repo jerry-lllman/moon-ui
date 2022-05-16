@@ -1,0 +1,51 @@
+.alert {
+	box-sizing: border-box;
+	border: 1px solid;
+	position: relative;
+	padding: 8px 15px;
+	border-radius: 2px;
+	display: flex;
+
+}
+
+.alert-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.alert-close-icon {
+	margin-left: 8px;
+	padding: 0;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 12px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.alert-success-wrapper {
+	@include alert-style($success-color-deprecated-bg, $success-color-deprecated-border)
+}
+
+.alert-info-wrapper {
+	@include alert-style($info-color-deprecated-bg, $info-color-deprecated-border)
+}
+
+.alert-warning-wrapper {
+	@include alert-style($warning-color-deprecated-bg, $warning-color-deprecated-border)
+}
+
+.alert-error-wrapper {
+	@include alert-style($error-color-deprecated-bg, $error-color-deprecated-border)
+}
+
+.alert-with-description {
+	align-items: flex-start;
+	padding: 15px 15px 15px 24px;
+	.alert-message {
+		font-size: $font-size-lg;
+		margin-bottom: 4px;
+	}
+}

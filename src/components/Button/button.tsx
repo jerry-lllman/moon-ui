@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { createRef, forwardRef } from "react";
-import LoadingOutlined from "../../icons/loadingOutlined/index";
+import LoadingOutlined from "../../icons/LoadingOutlined/index";
 
 export enum ButtonSize {
 	Large = 'large',

@@ -34,3 +34,8 @@
 		border-color: $border;
 	}
 }
+
+@mixin alert-style($background, $border) {
+	background-color: $background;
+	border-color: $border;
+}

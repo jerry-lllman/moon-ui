@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 14px;
+}
+
 // Body
 //
 // 1. Remove the margin in all browsers.
@@ -353,8 +357,9 @@ button {
 // Credit: https://github.com/suitcss/base/
 
 button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  // outline: 1px dotted;
+  // outline: 5px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 // 1. Remove the margin in Firefox and Safari

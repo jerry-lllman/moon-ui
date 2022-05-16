@@ -18,9 +18,11 @@ $pink:     #e83e8c !default;
 $red: 		 #e3342f !default;
 $orange:	 #f6993f !default;
 $yellow:	 #f1c40f !default;
-$green: 	 #38c172 !default;
+$green: 	 #52c41a !default;
 $teal: 		 #4dc0b5 !default;
 $cyan: 		 #6cb2eb !default;
+
+
 
 $primary: 	 $blue !default;
 $secondary:	 $gray-600 !default;
@@ -30,6 +32,15 @@ $warning: 	 $yellow !default;
 $danger: 	 	 $red !default;
 $light: 	 	 $gray-100 !default;
 $dark: 	 	 	 $gray-800 !default;
+
+$success-color-deprecated-bg: #f6ffed !default;
+$success-color-deprecated-border: #b7eb8f !default;
+$info-color-deprecated-bg: #e6f7ff;
+$info-color-deprecated-border: #91d5ff;
+$warning-color-deprecated-bg: #fffbe6;
+$warning-color-deprecated-border: #ffe58f;
+$error-color-deprecated-bg: #fff2f0;
+$error-color-deprecated-border: #ffccc7;
 
 // 无衬线字体（最佳解决方案）
 $font-family-sans-serif:      	-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
