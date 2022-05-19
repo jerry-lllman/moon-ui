@@ -9,7 +9,7 @@ export enum AlertType {
 	Error = 'error'
 }
 
-interface AlertProps {
+interface BaseAlertProps {
 	message: React.ReactNode,
 	type?: AlertType
 	closable?: boolean
@@ -18,19 +18,23 @@ interface AlertProps {
 	description?: React.ReactNode
 }
 
+type AlertProps = BaseAlertProps & React.HTMLAttributes<HTMLElement>
+
 function Alert(props: AlertProps) {
 	const { message,
 		type = AlertType.Info,
 		closable = false,
 		closeIcon = <CloseOutlined />,
-		description
+		description,
+		className,
+		...rest
 	} = props
 
 	const [closed, setClosed] = useState(false)
 
 	const prefixCls = `alert-${type}`
 
-	const classes = classNames('alert', {
+	const classes = classNames('alert', className, {
 		[`${prefixCls}-wrapper`]: type,
 		['alert-with-description']: description
 	})
@@ -43,8 +47,8 @@ function Alert(props: AlertProps) {
 	if (closed) return null
 
 	return (
-		<div className={classes} data-testid="test-alert">
-			
+		<div className={classes} data-testid="test-alert" {...rest}>
+
 			<div className="alert-content">
 				<div className="alert-message">{message}</div>
 				{description && <div className="alert-description">{description}</div>}
@@ -59,11 +63,7 @@ function Alert(props: AlertProps) {
 						onClick={handleClose}
 						tabIndex={0}
 					>
-						<span
-							className="alert-close-text"
-						>
-							{closeIcon}
-						</span>
+						<span className="alert-close-text">{closeIcon}</span>
 					</button>
 				)
 			}

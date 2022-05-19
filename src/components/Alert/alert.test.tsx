@@ -1,5 +1,6 @@
 
-import { act, fireEvent, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import Alert, { AlertType } from './alert'
 
 const TEST_ID = 'test-alert'
@@ -38,14 +39,14 @@ describe('test Alert component', () => {
 		)
 		const element = wrapper.getByTestId(TEST_ID)
 		const closeElement = wrapper.getByTestId(TEST_CLOSE_ICON_ID)
-		fireEvent.click(closeElement)
+		userEvent.click(closeElement)
 		expect(onClose).toHaveBeenCalled()
 		expect(element).not.toBeInTheDocument()
 	})
 
 	it('support closeIcon', () => {
 		const wrapper = render(<Alert closable closeIcon={<span>close</span>} message="" />)
-		
+
 		expect(wrapper.getByText('close')).toBeInTheDocument()
 	})
 
